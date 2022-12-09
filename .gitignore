@@ -109,3 +109,4 @@ app/build
 *.iml
 .idea/
 scripts/export-vars.sh
+*.log

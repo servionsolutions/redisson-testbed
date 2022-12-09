@@ -41,5 +41,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'org.example.redissonfailover.MainApp'
+    mainClass = 'org.example.redissonfailover.SubscriptionFailApp'
 }

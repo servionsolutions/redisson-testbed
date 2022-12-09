@@ -48,14 +48,14 @@ private subnet, some variant of the following steps must be taken:
    # export ELASTICACHE_PASSWORD=
 
    # Run 2 identical copies of the app to test the lock or subscriptions
-   /tmp/app-shadow/bin/app &> /tmp/app01_test09.log & 
-   /tmp/app-shadow/bin/app &> /tmp/app02_test09.log &
+   /tmp/app-shadow/bin/app &> /tmp/app01_test11.log & 
+   /tmp/app-shadow/bin/app &> /tmp/app02_test11.log &
    
    # if desired, monitor subscriptions with redis-cli - this will poll to see how many subscriptions are connected to a given topic
-   /tmp/redis-subs.sh &> /tmp/subs_test09.log &
+   /tmp/redis-subs.sh &> /tmp/subs_test11.log &
 
    # Monitor lock with redis-cli - this will poll to see the contents of the lock within redis directly
-   /tmp/redis-lock.sh &>> /tmp/lock_test09.log &
+   /tmp/redis-lock.sh &>> /tmp/lock_test11.log &
 
    # Trigger a failover 
    aws elasticache test-failover --replication-group-id <cluster id here> --node-group-id 0001 --region eu-west-1
