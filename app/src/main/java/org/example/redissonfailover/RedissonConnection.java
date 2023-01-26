@@ -24,10 +24,10 @@ public class RedissonConnection {
         Config config = new Config();
         ClusterServersConfig clusterServers = config.useClusterServers()
                 .setRetryInterval(3000)
-                .setTimeout(30000)
+                .setTimeout(30000);
 //                .setRetryAttempts(300)
 //                .setSubscriptionMode(SubscriptionMode.SLAVE)
-                .setSubscriptionsPerConnection(10);
+//                .setSubscriptionsPerConnection(10);
         if(KEY_PREFIX != null && KEY_PREFIX.length() > 0) {
             clusterServers.setNameMapper(new NameMapper() {
                 @Override
@@ -41,7 +41,7 @@ public class RedissonConnection {
                 }
             });
         }
-        // Setting this to FALSE eliminates the lock bug, so it seems that the unexpected exception causes the bug.
+        // Setting this to FALSE eliminates the lock bug, so it seems that the unexpected exception causes the bug - perhaps a leaked thread?
 //        config.setCheckLockSyncedSlaves(false);
 
         config.setConnectionListener(new ConnectionListener() {
@@ -61,7 +61,7 @@ public class RedissonConnection {
         clusterServers.addNodeAddress("redis://" + LOCAL_CONNECTION_URI);
 
 //        Uncomment to test with AWS elasticache redis cluster
-//        // AWS testing with SSL, same env vars as issuebook
+        // AWS testing with SSL, same env vars as issuebook
 //        clusterServers.addNodeAddress("rediss://" +
 //                        System.getenv("ELASTICACHE_DNS_NAME") + ":" +
 //                        Integer.parseInt(System.getenv("ELASTICACHE_PORT")))

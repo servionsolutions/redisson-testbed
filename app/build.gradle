@@ -18,22 +18,22 @@ repositories {
 }
 
 dependencies {
-//    implementation 'org.redisson:redisson:3.18.1'
-    implementation 'org.redisson:redisson-all:3.18.1'
-//    implementation group: 'org.redisson', name: 'redisson', version: '3.18.1-jlpatch'
+//    implementation 'org.redisson:redisson:3.18.2:jlpatch'
+//    implementation 'org.redisson:redisson-all:3.18.2-SNAPSHOT'
+    implementation 'org.redisson:redisson:3.19.1'
 
     // https://mvnrepository.com/artifact/io.netty/netty-all
 
     // Uncomment these to use snapshot build without all redisson-jar
-//    implementation group: 'io.netty', name: 'netty-all', version: '4.1.85.Final'
-//    implementation group: 'org.jboss.marshalling', name: 'jboss-marshalling', version: '2.1.1.Final'
-//    implementation group: 'org.jboss.marshalling', name: 'jboss-marshalling-river', version: '2.1.1.Final'
-//    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.14.0'
-//    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.0'
-//    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.14.0'
-//    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.14.0'
-//    implementation group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.85.Final'
-
+    implementation group: 'io.netty', name: 'netty-all', version: '4.1.85.Final'
+    implementation group: 'org.jboss.marshalling', name: 'jboss-marshalling', version: '2.1.1.Final'
+    implementation group: 'org.jboss.marshalling', name: 'jboss-marshalling-river', version: '2.1.1.Final'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.14.0'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.0'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.14.0'
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.14.0'
+    implementation group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.85.Final'
+    implementation group: 'com.esotericsoftware', name: 'kryo', version: '5.3.0'
 
 //    implementation 'org.slf4j:log4j-slf4j2-impl:2.19.0'
     implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.19.0'
@@ -41,5 +41,6 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'org.example.redissonfailover.SubscriptionFailApp'
+//    mainClass = 'org.example.redissonfailover.SubscriptionFailApp'
+    mainClass = 'org.example.redissonfailover.LockFailoverFailApp'
 }

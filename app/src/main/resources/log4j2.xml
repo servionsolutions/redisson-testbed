@@ -9,7 +9,7 @@
         </File>
     </Appenders>
     <Loggers>
-        <Logger name="org.redisson" level="TRACE"/>
+        <Logger name="org.redisson" level="DEBUG"/>
 
         <Root level="INFO">
             <AppenderRef ref="Console"/>
